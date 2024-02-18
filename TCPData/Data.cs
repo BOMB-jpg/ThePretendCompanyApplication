@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-
+//查看代码 bgm启动  
 namespace TCPData
 {
     public static class Data
     {
+
+        // 这个类包含了两方法    GetDepartments()  和   GetEmployees（）
         public static List<Employee> GetEmployees()
         {
+          //声明一个员工们的集合
             List<Employee> employees = new List<Employee>();
 
             Employee employee = new Employee
