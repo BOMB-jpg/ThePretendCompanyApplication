@@ -13,7 +13,7 @@ namespace ThePretendCompanyApplication
         {
 
             //List<Employee> employeeList = Data.GetEmployees();
-
+ //用先前定义的扩展方法 Filter<T>。筛选条件是年薪小于 50000 的员工。
             //var filteredEmployees = employeeList.Filter(emp => emp.AnnualSalary < 50000);
 
             //foreach (var employee in filteredEmployees)
@@ -26,7 +26,7 @@ namespace ThePretendCompanyApplication
             //}
 
             //List<Department> departmentList = Data.GetDepartments();
-
+//通过Where作为查询条件
             //var filteredDepartments = departmentList.Where(dept => dept.ShortName == "TE" || dept.ShortName == "HR");
 
             //foreach (var department in filteredDepartments)
@@ -39,7 +39,7 @@ namespace ThePretendCompanyApplication
 
             List<Employee> employeeList = Data.GetEmployees();
             List<Department> departmentList = Data.GetDepartments();
-
+//LInQ表达式
             var resultList = from emp in employeeList
                              join dept in departmentList
                              on emp.DepartmentId equals dept.Id
@@ -62,6 +62,7 @@ namespace ThePretendCompanyApplication
                 Console.WriteLine($"Department: {employee.Department}");
                 Console.WriteLine();
             }
+            
 
             var averageAnnualSalary = resultList.Average(a => a.AnnualSalary);
             var highestAnnualSalary = resultList.Max(a => a.AnnualSalary);
